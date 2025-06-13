@@ -1,0 +1,22 @@
+from serpapi import GoogleSearch
+import json
+
+params = {
+    "engine": "walmart_product",
+    "product_id": "174083881",
+    "api_key": "api_key"
+}
+
+output = "titos_Information.json"
+
+search = GoogleSearch(params)
+results = search.get_dict()
+product_result = results["product_result"]
+
+with open(output, 'w') as json_file:
+    json.dump(product_result, json_file, indent=4)
+
+product_price = product_result["price_map"]["price"]
+print("Product Name: ", product_result["title"])
+print(f"Product Price: ${product_price}", )
+
