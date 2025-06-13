@@ -1,3 +1,3 @@
 # PythonScripts
 
-Python codebase which contains scripts and small projects used over the years for simple automation, or doing some type of service that is time consuming to do manually.
+A Python codebase consisting of scripts and small projects developed over the years to automate repetitive tasks and streamline time-consuming manual processes.
