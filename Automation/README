@@ -1,0 +1,40 @@
+What do I want this project to do? 
+
+    - Setup firewall rules (Ufw)
+        - default incoming deny
+        - default outgoing allow
+        - allow various service ports
+            81/tcp                     ALLOW       135.134.223.46            
+            81/tcp                     ALLOW       192.168.1.0/24            
+            80,443/tcp                 ALLOW       103.21.244.0/22           
+            80,443/tcp                 ALLOW       173.245.48.0/20           
+            80,443/tcp                 ALLOW       103.22.200.0/22           
+            80,443/tcp                 ALLOW       103.31.4.0/22             
+            80,443/tcp                 ALLOW       141.101.64.0/18           
+            80,443/tcp                 ALLOW       108.162.192.0/18          
+            80,443/tcp                 ALLOW       190.93.240.0/20           
+            80,443/tcp                 ALLOW       188.114.96.0/20           
+            80,443/tcp                 ALLOW       197.234.240.0/22          
+            80,443/tcp                 ALLOW       198.41.128.0/17           
+            80,443/tcp                 ALLOW       162.158.0.0/15            
+            80,443/tcp                 ALLOW       104.16.0.0/13             
+            80,443/tcp                 ALLOW       104.24.0.0/14             
+            80,443/tcp                 ALLOW       172.64.0.0/13             
+            80,443/tcp                 ALLOW       131.0.72.0/22             
+            Anywhere                   ALLOW       100.64.0.0/10 
+            8096 (v6)                  ALLOW       Anywhere (v6)             
+            3001 (v6)                  ALLOW       Anywhere (v6)             
+            8081 (v6)                  ALLOW       Anywhere (v6)             
+            5055 (v6)                  ALLOW       Anywhere (v6)             
+            8989 (v6)                  ALLOW       Anywhere (v6)             
+            7878 (v6)                  ALLOW       Anywhere (v6)             
+            9898 (v6)                  ALLOW       Anywhere (v6) 
+
+    - Setup file mounts in /etc/fstab
+        //192.168.1.69/MediaDrive /mnt/NASMedia cifs credentials=/etc/samba/nas-credentials,rw,uid=1001,gid=1001,iocharset=utf8,vers=3.0 0 0
+        
+        //192.168.1.69/PictureDrive /mnt/PictureBackup cifs credentials=/etc/samba/nas-credentials,iocharset=utf8,vers=3.0 0 0
+        
+        //192.168.1.69/FileDrive /mnt/FileDrive cifs credentials=/etc/samba/nas-credentials,iocharset=utf8,vers=3.0 0 0
+
+
