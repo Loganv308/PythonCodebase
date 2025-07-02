@@ -116,12 +116,15 @@ setupFileMounts() {
     echo "username=yourUsername\npassword=yourPassword" >> .smbcredentials
 }
 
-source ./setupEnv.sh
+setupEnvVariables() {
+    source ./setupEnv.sh
 
-for env in "${env_vars[@]}"; do
-    echo "Environment Variable set: $env=${!env}"
-done
+    for env in "${env_vars[@]}"; do
+        echo "Environment Variable set: $env=${!env}"
+    done
+}
 
 packageMaintenance
+setupEnvVariables
 setupFileMounts
 firewallSetup
